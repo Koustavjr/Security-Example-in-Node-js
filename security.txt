@@ -1,0 +1,47 @@
+Authentication validates the users are who they claim to be usually by a username and password.
+Authorization checks whether the user have the permission to use a particular file after Authentication.
+
+JWT or json web tokens are a type of access tokens that specifies the identity of an application user or act as 
+credentials to users to grant access to an API.
+
+Oauth2
+
+Resource owner    client          Resource Server    Authorization Server
+
+
+User              www.app.com       api.app.com      account.google.com
+
+
+
+helmet protects our end points by preventing configuration issues,
+where as passport helps us to authenticate users
+
+passport.initialize() is a function that returns a middleware that helps us to set up passport
+
+cookies: These are basically strings of data stored in our browser.
+
+sessions:state that shouldnot be changed by user in their browser directly. It tied to specific browser and temporary
+state of the app on that browser. use to store temporary user data as they are using our application
+
+stateful cookie: In this cookie the session information or id stay somewhere in the database of the server.
+So we use this stateful cookies for server side sessions. Here we need DB to store our session data and server 
+identifies the session used by user in the DB using session id
+
+stateless cookies: When we are in client site sessions all the session information we need lives in client already
+It is stored in the browser cookies already. Each piece of session info corresponds to one cookie value
+
+when a user sign in the server set  a cookie value for the session and send it to browser and to prevent the user
+to tamper with the cookie it encrypt it.
+
+Only server has the key to sign the session
+
+
+serialization: saving of user data in cookie that going to be pass around in user browser
+deserialization: loading of user data from cookie into  a value that we can read inside our express API
+
+passport.session()--> Authenticates the sessions send to our server
+
+req.logout() --> removes user.req from the cache and clears any logged in sessions
+
+
+Next steps--->refresh access token
