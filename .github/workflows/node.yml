@@ -11,12 +11,7 @@ on:
 
 jobs:
   build:
-    env:
-        CI: true
-        CLIENT_ID: {{secrets.CLIENT_ID}}
-        CLIENT_SECRET: {{secrets.CLIENT_SECRET}}
-        COOKIE_KEY_1: {{secrets.COOKIE_KEY_1}}
-        COOKIE_KEY_2: {{secrets.COOKIE_KEY_2}}
+    
     runs-on: ubuntu-latest
 
     strategy:
